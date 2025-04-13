@@ -7,11 +7,15 @@ const App = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("https://verification-backend-7teh4rxo4-qudratullahkhan9s-projects.vercel.app/fetch/2467270621")
-      .then((res) => res.json())
+    fetch("https://verification-backend-lrb59c9kz-qudratullahkhan9s-projects.vercel.app/fetch/2467270621")
+      .then((res) => {
+        if (!res.ok) throw new Error("Network response was not ok QUDRAT");
+        return res.json();
+      })
       .then(setData)
       .catch((err) => console.error("Failed to fetch data:", err));
   }, []);
+  
   
   if (!data) return <div>Loading...</div>;
 
