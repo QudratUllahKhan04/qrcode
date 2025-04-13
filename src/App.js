@@ -7,7 +7,7 @@ const App = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch("https://verification-backend-r6u0cr6i3-qudratullahkhan9s-projects.vercel.app/fetch/2467270621")
+    fetch("https://verification-backend-7teh4rxo4-qudratullahkhan9s-projects.vercel.app/fetch/2467270621")
       .then((res) => res.json())
       .then(setData)
       .catch((err) => console.error("Failed to fetch data:", err));
