@@ -281,7 +281,7 @@ z-index: 10000;
     display: flex;
     flex-direction: column;
     background: url('../public/background_industry.jpg') no-repeat center center;
-    /* background-size: cover;               Ensures full coverage */
+    background-size: cover;
     background-attachment: fixed;         /* Keeps it fixed during scroll */
      /* Ensures center alignment */
     background-repeat: no-repeat;  
