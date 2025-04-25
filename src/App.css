@@ -145,6 +145,10 @@ body, html {
   font-size: 14px;
   line-height: 1.4;
 }
+.footer-div{
+  position: fixed;
+  z-index: 10000px;
+}
 
 .bv-link {
   text-decoration: none;

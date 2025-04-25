@@ -51,7 +51,7 @@ const UserDetail = () => {
             <div className="data-row"><strong>Published on :</strong><span>{data.publishedOn}</span></div>
             <div className="data-row"><strong>QR Code Status :</strong><span>{data.qrCodeStatus}</span></div>
             <div className="data-row"><strong>NAME :</strong><span>{data.name}</span></div>
-            <div className="data-row"><strong>ID :</strong><span>{data.id}</span></div>
+            <div className="data-row"><strong>ID :</strong><span>{data.userId}</span></div>
             <div className="data-row"><strong>ISSUED ON :</strong><span>{data.issuedOn}</span></div>
             <div className="data-row"><strong>VALID UNTIL :</strong><span>{data.validUntil}</span></div>
             <div className="data-row"><strong>TYPE :</strong><span>{data.type}</span></div>
@@ -69,7 +69,7 @@ const UserDetail = () => {
           <img src={cartimage} alt="Bureau Veritas" />
         </span>
       </div>
-      <div>
+      <div className="footer-div">
         <a
           href="https://group.bureauveritas.com/"
           target="_blank"
