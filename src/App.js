@@ -76,7 +76,7 @@ const UserDetail = () => {
           rel="noopener noreferrer"
           className="bv-link"
         >
-          <p style={{ padding: 10, width: 180,marginBottom:-10 }}>
+          <p style={{ padding: 10, width: 180,marginBottom:10 }}>
             <span style={{ display: 'block', fontSize: 11, textAlign: 'center' }}>Visit</span>
             <b style={{ fontWeight: 'lighter' }}>Bureau Veritas Website</b>
           </p>
