@@ -69,7 +69,7 @@ const UserDetail = () => {
           <img src={cartimage} alt="Bureau Veritas" />
         </span>
       </div>
-      <div className="footer-div">
+      <div className="footer-p">
         <a
           href="https://group.bureauveritas.com/"
           target="_blank"
