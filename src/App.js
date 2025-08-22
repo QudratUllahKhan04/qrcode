@@ -11,7 +11,7 @@ const UserDetail = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://verification-backend.vercel.app/${id}`);
+        const res = await fetch(`https://verification-backend-three.vercel.app/${id}`);
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const data = await res.json();
         console.log("✅ Data received:", data);
