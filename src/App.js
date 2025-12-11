@@ -56,7 +56,7 @@ const UserDetail = () => {
             <div className="data-row"><strong>NAME :</strong><span>{data.name}</span></div>
             <div className="data-row"><strong>ID :</strong><span>{data.userId}</span></div>
 <div className="data-row">
-  <strong>ISSUED ON WORKED :</strong>
+  <strong>ISSUED ON :</strong>
   <span>{formatDate(data.issuedOn)}</span>
 </div>
 
