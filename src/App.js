@@ -4,10 +4,20 @@ import "./App.css";
 import cartimage from './image/images2.png';
 import circle_success from './image/circle_success.png';
 
+// ✅ 1. Yahan formatDate function add kiya hai
+const formatDate = (dateString) => {
+  if (!dateString) return "N/A";
+  return new Date(dateString).toLocaleDateString("en-US", {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+};
+
 const UserDetail = () => {
   const [data, setData] = useState(null);
-  const { id } = useParams();  // This will grab the 'id' from the URL
-  console.log(id)
+  const { id } = useParams(); 
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,7 +30,7 @@ const UserDetail = () => {
         console.error("❌ Failed to fetch data:", err.message);
       }
     };
-  
+   
     fetchData();
   }, [id]);
 
@@ -30,6 +40,7 @@ const UserDetail = () => {
     <div className="main-container">
       <div className="header">
         <div className="fingerprint-wrapper">
+          {/* Make sure images.jpg public folder mein ho */}
           <img src="/images.jpg" alt="Fingerprint" className="fingerprint" />
         </div>
         <div className="header-text">
@@ -47,22 +58,17 @@ const UserDetail = () => {
         <div className="data-card-wrapper">
           <div className="data-card-body">
             <div className="data-row"><strong>Deliverable Id :</strong><span>{data.deliverableId}</span></div>
-           <div className="data-row">
-  <strong>Published on :</strong>
-  <span>{formatDate(data.publishedOn)}</span>
-</div>
+            
+            {/* ✅ Ab ye line crash nahi karegi */}
+            <div className="data-row"><strong>Published on :</strong><span>{formatDate(data.publishedOn)}</span></div>
+            
             <div className="data-row"><strong>QR Code Status :</strong><span>{data.qrCodeStatus}</span></div>
             <div className="data-row"><strong>NAME :</strong><span>{data.name}</span></div>
             <div className="data-row"><strong>ID :</strong><span>{data.userId}</span></div>
-<div className="data-row">
-  <strong>ISSUED ON :</strong>
-  <span>{formatDate(data.issuedOn)}</span>
-</div>
-
-<div className="data-row">
-  <strong>VALID UNTIL :</strong>
-  <span>{formatDate(data.validUntil)}</span>
-</div>
+            
+            <div className="data-row"><strong>ISSUED ON :</strong><span>{formatDate(data.issuedOn)}</span></div>
+            <div className="data-row"><strong>VALID UNTIL :</strong><span>{formatDate(data.validUntil)}</span></div>
+            
             <div className="data-row"><strong>TYPE :</strong><span>{data.type}</span></div>
             <div className="data-row"><strong>MODEL :</strong><span>{data.model}</span></div>
             <div className="data-row"><strong>COMPANY :</strong><span>{data.company}</span></div>
@@ -79,13 +85,8 @@ const UserDetail = () => {
         </span>
       </div>
       <div className="footer-p">
-        <a
-          href="https://group.bureauveritas.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bv-link"
-        >
-          <p style={{ padding: 10, width: 180,marginBottom:10 }}>
+        <a href="https://group.bureauveritas.com/" target="_blank" rel="noopener noreferrer" className="bv-link">
+          <p style={{ padding: 10, width: 180, marginBottom: 10 }}>
             <span style={{ display: 'block', fontSize: 11, textAlign: 'center' }}>Visit</span>
             <b style={{ fontWeight: 'lighter' }}>Bureau Veritas Website</b>
           </p>
