@@ -23,8 +23,7 @@ const UserDetail = () => {
   
     fetchData();
   }, [id]);
-  
-  
+
   if (!data) return <div>Loading...</div>;
 
   return (
