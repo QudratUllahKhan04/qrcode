@@ -4,6 +4,13 @@ import "./App.css";
 import cartimage from './image/images2.png';
 import circle_success from './image/circle_success.png';
 
+// ✅ SPECIAL FUNCTION: Ye "2025-12-13" ko "13/12/2025" bana dega
+const formatDate = (dateString) => {
+  if (!dateString) return "";
+  // Ye date ko '-' se todta hai aur ulta jod deta hai
+  return dateString.split("-").reverse().join("/");
+};
+
 const UserDetail = () => {
   const [data, setData] = useState(null);
   const { id } = useParams();
@@ -48,26 +55,26 @@ const UserDetail = () => {
           <div className="data-card-body">
             <div className="data-row"><strong>Deliverable Id :</strong><span>{data.deliverableId}</span></div>
             
-            {/* ✅ Maine yahan se formatDate hata diya hai, ab ye direct string dikhayega */}
+            {/* ✅ Yahan formatDate lagaya hai */}
             <div className="data-row">
               <strong>Published on :</strong>
-              <span>{data.publishedOn}</span>
+              <span>{formatDate(data.publishedOn)}</span>
             </div>
 
             <div className="data-row"><strong>QR Code Status :</strong><span>{data.qrCodeStatus}</span></div>
             <div className="data-row"><strong>NAME :</strong><span>{data.name}</span></div>
             <div className="data-row"><strong>ID :</strong><span>{data.userId}</span></div>
             
-            {/* ✅ Yahan se bhi hata diya */}
+            {/* ✅ Yahan formatDate lagaya hai */}
             <div className="data-row">
               <strong>ISSUED ON :</strong>
-              <span>{data.issuedOn}</span>
+              <span>{formatDate(data.issuedOn)}</span>
             </div>
 
-            {/* ✅ Yahan se bhi hata diya */}
+            {/* ✅ Yahan formatDate lagaya hai */}
             <div className="data-row">
               <strong>VALID UNTIL :</strong>
-              <span>{data.validUntil}</span>
+              <span>{formatDate(data.validUntil)}</span>
             </div>
 
             <div className="data-row"><strong>TYPE :</strong><span>{data.type}</span></div>
